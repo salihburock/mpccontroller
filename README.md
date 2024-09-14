@@ -14,3 +14,4 @@ To display the info with "mpc" command there is a file located at /sdcard/mpc th
 
 
 It's as simple as it gets for now
+
