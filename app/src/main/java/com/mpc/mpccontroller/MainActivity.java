@@ -1,30 +1,16 @@
 package com.mpc.mpccontroller;
 
-import android.app.Service;
-import android.content.Intent;
-import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.IBinder;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.   view.WindowInsetsCompat;
-
-import org.w3c.dom.Text;
 
 import java.io.BufferedReader;
-import java.io.DataOutputStream;
-import java.io.IOException;
 import java.io.InputStreamReader;
 
 
@@ -39,9 +25,9 @@ public class MainActivity extends AppCompatActivity {
         protected void onCreate(Bundle savedInstanceState) {
                 setContentView(R.layout.main_activity);
 
-                Button tButton = (Button)findViewById(R.id.button);
-                Button nButton = (Button)findViewById(R.id.button2);
-                Button pButton = (Button)findViewById(R.id.button3);
+                Button tButton = findViewById(R.id.button);
+                Button nButton = findViewById(R.id.button2);
+                Button pButton = findViewById(R.id.button3);
                 mpcInfo = findViewById(R.id.textView2);
 
                 handler.post(updateTextViewTask);
@@ -96,9 +82,6 @@ public class MainActivity extends AppCompatActivity {
                 }
                 EdgeToEdge.enable(this);
 
-
-
-                // Register receiver dynamically
 
 
         }
