@@ -30,7 +30,6 @@ import java.io.InputStreamReader;
 
 
 public class MainActivity extends AppCompatActivity {
-        private PowerButtonReceiver powerButtonReceiver;
 
 
         public TextView mpcInfo;
@@ -55,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onClick(View v) {
                                 String result = ShellUtils.runAsRoot(toTermuxIntent("mpc","toggle"));
-                                System.out.println("Command Output: " + result.toString());
 
                         }
                 });
@@ -64,7 +62,6 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onClick(View v) {
                                 String result = ShellUtils.runAsRoot(toTermuxIntent("mpc","next"));
-                                System.out.println("Command Output: " + result.toString());
 
                         }
                 });
@@ -74,7 +71,6 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onClick(View v) {
                                 String result = ShellUtils.runAsRoot(toTermuxIntent("mpc","prev"));
-                                System.out.println("Command Output: " + result.toString());
 
                         }
                 });
@@ -103,29 +99,13 @@ public class MainActivity extends AppCompatActivity {
 
 
                 // Register receiver dynamically
-                powerButtonReceiver = new PowerButtonReceiver();
-                IntentFilter filter = new IntentFilter();
-                filter.addAction(Intent.ACTION_SCREEN_ON);
-                filter.addAction(Intent.ACTION_SCREEN_OFF);
-                registerReceiver(powerButtonReceiver, filter);
+
 
         }
-
-        @Override
-        public boolean onKeyDown(int keyCode, KeyEvent event) {
-                if (event.getKeyCode() == KeyEvent.KEYCODE_POWER) {
-                        Toast.makeText(this, "aaa", Toast.LENGTH_LONG).show();
-
-                        return true;
-                }
-                return super.onKeyDown(keyCode, event);
-        }
-
 
         protected void onDestroy() {
                 super.onDestroy();
                 handler.removeCallbacks(updateTextViewTask);
-                unregisterReceiver(powerButtonReceiver);
         }
 
         public Runnable updateTextViewTask = new Runnable() {
