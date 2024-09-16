@@ -7,8 +7,8 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="192sp"
-        android:layout_height="192dp"
+        android:layout_width="144sp"
+        android:layout_height="144sp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
         android:onClick="onClickBtn"
@@ -21,8 +21,8 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="192sp"
-        android:layout_height="192sp"
+        android:layout_width="144sp"
+        android:layout_height="144sp"
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="16dp"
         android:text="mpc next"
@@ -32,8 +32,8 @@
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="192sp"
-        android:layout_height="192sp"
+        android:layout_width="144sp"
+        android:layout_height="144sp"
         android:layout_marginStart="40dp"
         android:layout_marginBottom="16dp"
         android:text="mpc prev"
@@ -43,17 +43,26 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="807sp"
-        android:layout_height="350sp"
+        android:layout_width="389dp"
+        android:layout_height="190dp"
         android:layout_marginBottom="68dp"
         android:gravity="center|top"
         android:text="mpc"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.083" />
+        app:layout_constraintVertical_bias="0.159" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="104dp"
+        android:layout_height="105dp"
+        android:text="mpd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
