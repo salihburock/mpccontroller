@@ -15,4 +15,4 @@ Termux must have allow-external-apps = true at ~/.termux/termux.properties
 
 It's as simple as it gets for now
 
-![screenshot](https://github.com/salihburock/mpccontroller/blob/main/screenshots/Screenshot_20240914-224028_mpccontroller.png)
+![screenshot](https://github.com/salihburock/mpccontroller/blob/main/screenshots/Screenshot_20240916-181204_mpccontroller.png)
