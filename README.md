@@ -15,4 +15,4 @@ Termux must have allow-external-apps = true at ~/.termux/termux.properties
 
 It's as simple as it gets for now
 
-![screenshot](photo_2024-09-23_23-22-06.jpg)
+![screenshot](https://github.com/salihburock/mpccontroller/blob/main/screenshots/photo_2024-09-23_23-22-06.jpg)
