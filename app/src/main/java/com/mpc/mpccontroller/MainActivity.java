@@ -32,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
                 Button tButton = findViewById(R.id.button);
                 Button nButton = findViewById(R.id.button2);
                 Button pButton = findViewById(R.id.button3);
+                Button plusButton = findViewById(R.id.button4);
+                Button minusButton = findViewById(R.id.button6);
                 Switch mpdSwitch = findViewById(R.id.switch1);
                 mpcInfo = findViewById(R.id.textView2);
 
@@ -73,6 +75,23 @@ public class MainActivity extends AppCompatActivity {
 
                         }
                 });
+
+                plusButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                                toTermuxIntent("mpc","vol", "+2");
+
+                        }
+                });
+                minusButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                                toTermuxIntent("mpc","vol", "-2");
+
+                        }
+                });
+
+
 
 
                 super.onCreate(savedInstanceState);
@@ -123,6 +142,18 @@ public class MainActivity extends AppCompatActivity {
                 intent.setAction("com.termux.RUN_COMMAND");
                 intent.putExtra("com.termux.RUN_COMMAND_PATH", "/data/data/com.termux/files/usr/bin/" + bin);
                 intent.putExtra("com.termux.RUN_COMMAND_ARGUMENTS", new String[]{argument});
+                intent.putExtra("com.termux.RUN_COMMAND_WORKDIR", "/data/data/com.termux/files/home");
+                intent.putExtra("com.termux.RUN_COMMAND_BACKGROUND", true);
+
+                startService(intent);
+
+        }
+        public void toTermuxIntent(String bin, String argument, String argument2) {
+                Intent intent = new Intent();
+                intent.setClassName("com.termux", "com.termux.app.RunCommandService");
+                intent.setAction("com.termux.RUN_COMMAND");
+                intent.putExtra("com.termux.RUN_COMMAND_PATH", "/data/data/com.termux/files/usr/bin/" + bin);
+                intent.putExtra("com.termux.RUN_COMMAND_ARGUMENTS", new String[]{argument,argument2});
                 intent.putExtra("com.termux.RUN_COMMAND_WORKDIR", "/data/data/com.termux/files/home");
                 intent.putExtra("com.termux.RUN_COMMAND_BACKGROUND", true);
 
